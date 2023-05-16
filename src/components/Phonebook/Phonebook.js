@@ -10,7 +10,6 @@ const Phonebook = () => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    console.log('gwegwegwev');
     const contacts = localStorage.getItem('contacts');
     const parsedContact = JSON.parse(contacts);
 
@@ -20,9 +19,7 @@ const Phonebook = () => {
   }, []);
 
   useEffect(() => {
-    if (contacts !== setContacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
+    localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const addContacts = ({ name, number }) => {
